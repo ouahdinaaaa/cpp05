@@ -5,13 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/12/05 12:52:40 by ayael-ou          #+#    #+#              #
-#    Updated: 2023/12/05 20:23:16 by ayael-ou         ###   ########.fr        #
+#    Created: 2023/12/05 20:23:23 by ayael-ou          #+#    #+#              #
+#    Updated: 2023/12/05 20:23:30 by ayael-ou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-
-NAME = Bureaucrat
+NAME = Form
 
 SRC_DIR = ./
 SRCS = 	main.cpp\

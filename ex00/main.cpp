@@ -6,13 +6,11 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 14:08:24 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/05 14:34:31 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/05 14:36:33 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "GradeTooHighException.hpp"
-#include "GradeTooLowException.hpp"
 
 int main()
 {

@@ -6,7 +6,7 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:53:30 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/05 14:12:25 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/05 19:48:12 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,20 @@ class Bureaucrat
     ~Bureaucrat();
     Bureaucrat(std::string const &name, int grade);
     
+    int         getGrade()const;
+    void        incrementGrade();
+    void        decrementGrade();
     std::string getName()const;
-    int getGrade()const;
-    void    incrementGrade();
-    void    decrementGrade();
+ 
+class GradeTooLowException : public std::exception
+{
+    virtual const char *what() const throw();
+}; 
+
+class GradeTooHightException : public std::exception
+{
+    virtual const char* what() const throw();
+};
 
 };
 

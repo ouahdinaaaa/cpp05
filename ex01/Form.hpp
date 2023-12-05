@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Gradetoohighexception.hpp                          :+:      :+:    :+:   */
+/*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/05 13:34:34 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/05 14:30:34 by ayael-ou         ###   ########.fr       */
+/*   Created: 2023/12/05 20:23:57 by ayael-ou          #+#    #+#             */
+/*   Updated: 2023/12/05 20:31:29 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GRADETOOHIGHEXCEPTION_HPP
-#define GRADETOOHIGHEXCEPTION_HPP
+#ifndef FORM_HPP
+#define FORM_HPP
 
-#include <exception>
+#include <iostream>
 #include <string>
 
-class GradeTooHightException : public std::exception
+class   Form
 {
     private : 
-        std::string _error_msg;
+
+    const std::string _name;
+    bool    status;
+    const int   _grade_exec;
+    const int   _grade_sign;
 
     public :
-    GradeTooHightException();
-    virtual ~GradeTooHightException()  noexcept;
-    virtual const char* what() const  noexcept;
-};
 
+    Form(const std::string &name, int signGrade, int execGrade);
+    std::string getName() const;
+    bool isSigned()const;
+};
 
 #endif
