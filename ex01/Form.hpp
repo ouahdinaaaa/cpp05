@@ -6,7 +6,7 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 20:23:57 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/05 20:31:29 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/05 20:49:55 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <string>
+# include "Bureaucrat.hpp"
 
 class   Form
 {
@@ -30,6 +31,9 @@ class   Form
     Form(const std::string &name, int signGrade, int execGrade);
     std::string getName() const;
     bool isSigned()const;
+    int getSign() const;
+    int getExec() const;
+    void    beSigned(const Bureaucrat &bureau);
 };
 
 #endif
