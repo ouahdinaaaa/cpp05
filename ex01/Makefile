@@ -6,15 +6,16 @@
 #    By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/05 20:23:23 by ayael-ou          #+#    #+#              #
-#    Updated: 2023/12/05 20:23:30 by ayael-ou         ###   ########.fr        #
+#    Updated: 2023/12/09 17:28:52 by ayael-ou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Form
 
 SRC_DIR = ./
-SRCS = 	main.cpp\
-		Bureaucrat.cpp\
+SRCS = 	Bureaucrat.cpp\
+		Form.cpp\
+		main.cpp\
 
 OBJS = ${SRCS:.cpp=.o}
 CC = c++

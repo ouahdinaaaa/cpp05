@@ -6,12 +6,12 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:54:31 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/05 20:13:53 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/09 17:29:56 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "Bureaucrat.hpp"
-
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat() : _name("ouahdina"), _grade(150)
 {
@@ -57,6 +57,15 @@ void    Bureaucrat::decrementGrade()
         throw Bureaucrat::GradeTooLowException();
     else
         this->_grade++;
+}
+
+
+void    Bureaucrat::signForm(Form *a)
+{
+    if (a->getSign() == true)
+        std::cout << this->_name << " a signe : " << a->getName() << std::endl;
+    else 
+        std::cout << this->_name << " n'as pas pu signe " << a->getName() << " car note pas suffisante " << std::endl;
 }
 
 std::ostream& operator<<(std::ostream& o, const Bureaucrat& objs)

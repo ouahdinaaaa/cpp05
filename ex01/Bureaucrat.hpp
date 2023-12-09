@@ -6,7 +6,7 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:53:30 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/05 19:48:12 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/09 14:41:52 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include <iostream>
 #include <string>
+
+class Form;
 
 class Bureaucrat
 {
@@ -33,7 +35,8 @@ class Bureaucrat
     void        incrementGrade();
     void        decrementGrade();
     std::string getName()const;
- 
+    void        signForm(Form *a);// si form signee imprim msg sinon imprim msg
+  
 class GradeTooLowException : public std::exception
 {
     virtual const char *what() const throw();

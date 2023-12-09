@@ -6,7 +6,7 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 20:23:57 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/05 20:49:55 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/09 17:27:53 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,24 @@ class   Form
     private : 
 
     const std::string _name;
-    bool    status;
-    const int   _grade_exec;
-    const int   _grade_sign;
+    const int   _grade_exec; // note requise pour exec
+    const int   _grade_sign;// note requise pour signer
+    bool    status; // savoir si signer ou non pas a construction
 
     public :
 
-    Form(const std::string &name, int signGrade, int execGrade);
+    Form(const std::string &name, int execGrade, int signGrade);
+    Form();
+    Form(const std::string &name);
+    Form(int exec, int sign);
     std::string getName() const;
     bool isSigned()const;
     int getSign() const;
     int getExec() const;
-    void    beSigned(const Bureaucrat &bureau);
+    void    beSigned(const Bureaucrat &bureau); // change status du form en true si note du bureaucrate est suffisante
 };
+
+std::ostream &operator<<(std::ostream &o, const Form &objs);
+
 
 #endif
