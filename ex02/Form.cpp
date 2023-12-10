@@ -6,7 +6,7 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 20:50:22 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/09 23:30:29 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/10 19:32:00 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,13 +59,18 @@ bool    Form::isSigned() const
 
 void    Form::beSigned(const Bureaucrat &bureau)
 {
-    if (bureau.getGrade() >= this->_grade_sign)
-        this->status = true;
+    if (!this->status)
+    { 
+        if (bureau.getGrade() <= this->_grade_sign)
+            this->status = true;
+        else
+            throw Form::GradeTooLowException();
+    }
 }
 
 const char* Form::FormNotSignedException::what() const throw()
 {
-    return ("Form is not signed\n");
+    return ("Form is not signed");
 }
 
 const char * Form::GradeTooHightException::what() const throw()
@@ -80,7 +85,7 @@ const char * Form::GradeTooLowException::what() const throw()
 
 void    Form::execute(const Bureaucrat& execu) const
 {
-    if (!this->status)
+    if (!this->isSigned())
         throw Form::FormNotSignedException();
     if(execu.getGrade() > this->getExec())
         throw Form::GradeTooLowException();
@@ -88,9 +93,9 @@ void    Form::execute(const Bureaucrat& execu) const
 
 std::ostream &operator<<(std::ostream &o, const Form &objs)
 {
-    o << "name :" << objs.getName() 
+    o << "\n{name :" << objs.getName() 
     << " || Grade exec : " << objs.getExec() 
     << " || Grade sign : " << objs.getSign() 
-    << " || status : " << objs.isSigned();
+    << " || status : " << objs.isSigned() << "}\n";
     return (o);
 }

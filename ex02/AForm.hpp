@@ -6,7 +6,7 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 18:21:45 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/09 23:26:54 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/10 19:58:58 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #define AFORM_HPP
 
 #include "Form.hpp"
+
+class Form;
 
 class AForm : public Form
 {

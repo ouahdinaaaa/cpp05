@@ -6,7 +6,7 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 18:59:56 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/09 23:20:42 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/10 19:42:03 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ PresedentialPardonForm::PresedentialPardonForm() : AForm("Jonh bendi", 25, 5), _
 
 }
 
-PresedentialPardonForm::PresedentialPardonForm(std::string &name) : AForm(name, 25, 5), _name(name) 
+PresedentialPardonForm::PresedentialPardonForm(const std::string &name) : AForm(name, 25, 5), _name(name) 
 {
 
 }
@@ -29,7 +29,6 @@ PresedentialPardonForm::~PresedentialPardonForm()
 
 void    PresedentialPardonForm::Grade(const Bureaucrat &bureau) const
 {
-    this->Form::execute(bureau);
+    this->execute(bureau);
     std::cout << this->_name << " A ete gracie par Zaphod Beeblebrox !!!" << std::endl;
 }
-

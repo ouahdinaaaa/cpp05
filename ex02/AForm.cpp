@@ -6,16 +6,17 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 18:47:40 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/09 23:27:15 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/10 19:58:48 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
+#include "Form.hpp"
+
 
 AForm::AForm() : Form()
 {
 }
-
 
 #include "AForm.hpp"
 

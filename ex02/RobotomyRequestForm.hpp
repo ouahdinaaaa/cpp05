@@ -6,7 +6,7 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 19:05:59 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/09 23:13:16 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/10 20:00:07 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class RobotomyRequestForm : public AForm
         RobotomyRequestForm(const std::string &name);
         RobotomyRequestForm();
         ~RobotomyRequestForm();
-        void    Robotomy(const Bureaucrat &bureau) const;
+        virtual void    Grade(const Bureaucrat &bureau) const;
 };
 
 

@@ -6,7 +6,7 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 20:23:57 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/09 23:29:45 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/10 19:54:42 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,13 @@ class   Form
     Form(const std::string &name);
     Form(int exec, int sign);
     virtual ~Form() = 0;
-    virtual std::string getName() const = 0;
-    virtual bool isSigned()const = 0;
-    virtual int getSign() const = 0;
-    virtual int getExec() const = 0;
-    virtual void    beSigned(const Bureaucrat &bureau) = 0; // change status du form en true si note du bureaucrate est suffisante
+    virtual std::string getName() const;
+    bool isSigned()const;
+    int getSign() const;
+    int getExec() const;
+    void    beSigned(const Bureaucrat &bureau); // change status du form en true si note du bureaucrate est suffisante
     void            execute(const Bureaucrat& execu)const;
+    virtual void Grade(const Bureaucrat &bureau) const ;
 
 class GradeTooLowException : public std::exception
 {

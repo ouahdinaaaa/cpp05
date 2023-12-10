@@ -6,7 +6,7 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 19:09:29 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/09 23:19:46 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/10 19:43:17 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ RobotomyRequestForm::~RobotomyRequestForm()
     
 }
 
-void    RobotomyRequestForm::Robotomy(const Bureaucrat &bureau) const
+void    RobotomyRequestForm::Grade(const Bureaucrat &bureau) const
 {
     this->Form::execute(bureau);
     if (this->nb >= 0.5)
