@@ -6,18 +6,19 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 19:23:00 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/09 19:37:39 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/09 23:33:56 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShruberryCreationForm.hpp"
+#include <fstream>
 
-ShruberryCreationForm::ShruberryCreationForm() : AForm(), _name("ouahdina")
+ShruberryCreationForm::ShruberryCreationForm() : AForm("home", 145, 137), _name("ouahdina")
 {
         
 }
 
-ShruberryCreationForm::ShruberryCreationForm(const std::string &name) : AForm(name), _name(name)
+ShruberryCreationForm::ShruberryCreationForm(const std::string &name) : AForm(name, 145, 137), _name(name)
 {
     
 }
@@ -28,33 +29,36 @@ ShruberryCreationForm::~ShruberryCreationForm()
 }
 
 
-void    ShruberryCreationForm::CreationForm()
+void    ShruberryCreationForm::CreationForm(const Bureaucrat &bureau) const
 {
-    /* 
-    std::fd << "                  .o00o                 " << std::endl; 
-    std::fd << "               o000000oo                " << std::endl; 
-    std::fd << "              00000000000o              " << std::endl;     
-    std::fd << "             00000000000000             " << std::endl; 
-    std::fd << "          oooooo  00000000  o88o        " << std::endl; 
-    std::fd << "       ooOOOOOOOoo  ```''  888888       " << std::endl; 
-    std::fd << "     OOOOOOOOOOOO'.qQQQQq. `8888'       " << std::endl; 
-    std::fd << "    oOOOOOOOOOO'.QQQQQQQQQQ/.88'        " << std::endl; 
-    std::fd << "    OOOOOOOOOO'.QQQQQQQQQQ/ /q          " << std::endl; 
-    std::fd << "     OOOOOOOOO QQQQQQQQQQ/ /QQ          " << std::endl; 
-    std::fd << "       OOOOOOOOO `QQQQQQ/ /QQ'          " << std::endl; 
-    std::fd << "         OO:F_P:O `QQQ/  /Q'            " << std::endl; 
-    std::fd << "            \\. \ |  // |               " << std::endl; 
-    std::fd << "            d\ \\\|_////                " << std::endl; 
-    std::fd << "            qP| \\ _' `|Ob              " << std::endl; 
-    std::fd << "               \  / \  \Op              " << std::endl; 
-    std::fd << "               |  | O| |                " << std::endl; 
-    std::fd << "       _       /\. \_/ /\               " << std::endl; 
-    std::fd << "        `---__/|_\\   //|  __           " << std::endl; 
-    std::fd << "              `-'  `-'`-'-'             " << std::endl; 
-    */
- // creer fichier avec ofstream || is_open pour ouvrir fichier qui est creer
- //puis on ecrit a linterieur avec des getline fd, line et chaque lifne   
- //on oublie pas de close
- 
+    this->Form::execute(bureau);
+    std::ofstream    fd(this->_name.c_str());
+
+    if (fd.is_open()){
+        
+        fd << "                  .o00o                 " << std::endl; 
+        fd << "               o000000oo                " << std::endl; 
+        fd << "              00000000000o              " << std::endl;     
+        fd << "             00000000000000             " << std::endl; 
+        fd << "          oooooo  00000000  o88o        " << std::endl; 
+        fd << "       ooOOOOOOOoo  ```''  888888       " << std::endl; 
+        fd << "     OOOOOOOOOOOO'.qQQQQq. `8888'       " << std::endl; 
+        fd << "    oOOOOOOOOOO'.QQQQQQQQQQ/.88'        " << std::endl; 
+        fd << "    OOOOOOOOOO'.QQQQQQQQQQ/ /q          " << std::endl; 
+        fd << "     OOOOOOOOO QQQQQQQQQQ/ /QQ          " << std::endl; 
+        fd << "       OOOOOOOOO `QQQQQQ/ /QQ'          " << std::endl; 
+        fd << "         OO:F_P:O `QQQ/  /Q'            " << std::endl; 
+        fd << "            \\. \' |  // |              " << std::endl; 
+        fd << "            d\' \\\'|_////              " << std::endl; 
+        fd << "            qP| \\ _' `|Ob              " << std::endl; 
+        fd << "               \'  / \'  \'Op           " << std::endl; 
+        fd << "               |  | O| |                " << std::endl; 
+        fd << "       _       /\'. \'_/ /\'            " << std::endl; 
+        fd << "        `---__/|_\\   //|  __           " << std::endl; 
+        fd << "              `-'  `-'`-'-'             " << std::endl; 
+        fd.close();
+    }
+    else
+        std::cout << "Erreur dans ouverture de fichier" << std::endl;
 }
 

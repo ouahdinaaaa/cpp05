@@ -6,7 +6,7 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 20:23:57 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/09 18:46:22 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/09 23:29:45 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,23 @@ class   Form
     virtual int getSign() const = 0;
     virtual int getExec() const = 0;
     virtual void    beSigned(const Bureaucrat &bureau) = 0; // change status du form en true si note du bureaucrate est suffisante
+    void            execute(const Bureaucrat& execu)const;
+
+class GradeTooLowException : public std::exception
+{
+    virtual const char *what() const throw();
+}; 
+
+class GradeTooHightException : public std::exception
+{
+    virtual const char* what() const throw();
+};
+
+class FormNotSignedException : public std::exception
+{
+    virtual const char* what() const throw();
+};
+
 };
 
 std::ostream &operator<<(std::ostream &o, const Form &objs);

@@ -6,7 +6,7 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 18:58:09 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/09 19:03:53 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/09 23:11:48 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class PresedentialPardonForm : public AForm
         PresedentialPardonForm();
         PresedentialPardonForm(std::string &name);
         ~PresedentialPardonForm();
-        void    Grade();
+        void    Grade(const Bureaucrat &bureau) const;
 };
 
 

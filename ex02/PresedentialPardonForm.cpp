@@ -6,18 +6,18 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 18:59:56 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/09 19:05:23 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/09 23:20:42 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresedentialPardonForm.hpp"
 
-PresedentialPardonForm::PresedentialPardonForm() : AForm(), _name("ouahdina")
+PresedentialPardonForm::PresedentialPardonForm() : AForm("Jonh bendi", 25, 5), _name("ouahdina")
 {
 
 }
 
-PresedentialPardonForm::PresedentialPardonForm(std::string &name) : AForm(name), _name(name) 
+PresedentialPardonForm::PresedentialPardonForm(std::string &name) : AForm(name, 25, 5), _name(name) 
 {
 
 }
@@ -27,8 +27,9 @@ PresedentialPardonForm::~PresedentialPardonForm()
     
 }
 
-void    PresedentialPardonForm::Grade()
+void    PresedentialPardonForm::Grade(const Bureaucrat &bureau) const
 {
+    this->Form::execute(bureau);
     std::cout << this->_name << " A ete gracie par Zaphod Beeblebrox !!!" << std::endl;
 }
 

@@ -6,7 +6,7 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 18:47:40 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/09 19:19:10 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/09 23:27:15 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,16 @@
 
 AForm::AForm() : Form()
 {
+}
+
+
+#include "AForm.hpp"
+
+AForm::AForm(const std::string &name, int sign, int exec) : Form(name, sign, exec)
+{
+        (void)name;
+        (void)sign;
+        (void)exec;
 }
 
 AForm::~AForm()
