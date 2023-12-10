@@ -6,7 +6,7 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 20:23:57 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/10 19:54:42 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/10 22:50:09 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ class   Form
     int getExec() const;
     void    beSigned(const Bureaucrat &bureau); // change status du form en true si note du bureaucrate est suffisante
     void            execute(const Bureaucrat& execu)const;
-    virtual void Grade(const Bureaucrat &bureau) const ;
+    virtual void Grade(const Bureaucrat &bureau) const = 0;
 
 class GradeTooLowException : public std::exception
 {

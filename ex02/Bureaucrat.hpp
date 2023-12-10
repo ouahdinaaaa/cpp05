@@ -6,7 +6,7 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:53:30 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/10 19:53:34 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/10 22:51:02 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include <iostream>
 #include <string>
+#include <cstdlib>
+
 
 class Form;
 class AForm;

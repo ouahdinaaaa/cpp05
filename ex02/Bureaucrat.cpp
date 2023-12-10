@@ -6,7 +6,7 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:54:31 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/10 19:59:45 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/10 22:34:15 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void    Bureaucrat::executeForm(AForm &a)
 {
     try
     {
-        // a.Grade(*this); 
+        a.Grade(*this); 
         std::cout << this->_name << " executed " << a << std::endl;
  
    }

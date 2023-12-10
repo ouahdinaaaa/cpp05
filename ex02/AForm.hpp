@@ -6,16 +6,13 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 18:21:45 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/10 19:58:58 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/10 22:50:17 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef AFORM_HPP
 #define AFORM_HPP
-
 #include "Form.hpp"
-
-class Form;
 
 class AForm : public Form
 {
