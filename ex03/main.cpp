@@ -6,94 +6,60 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 16:55:11 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/10 22:51:42 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/11 20:26:33 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
-#include "AForm.hpp"
-
-#include "ShruberryCreationForm.hpp"
-#include "PresedentialPardonForm.hpp"
-#include "RobotomyRequestForm.hpp"
+#include "Intern.hpp"
 
 int main(void)
 {
     srand(time(NULL));
-    Bureaucrat jonh("jonh", 5);
-    Bureaucrat jim("jim", 3);
-    Bureaucrat Lam("Lam");
+    Bureaucrat jonh("👱 jonh", 5);
+    Bureaucrat jim("👱 jim", 3);
+    Bureaucrat Lam("👱 Lam", 5);
 
-    RobotomyRequestForm Robot("Pluto");
-    PresedentialPardonForm  Pres("Prez");
-    ShruberryCreationForm   home("home");
+    Intern RandomIntern;
+
+    Form* rrf;
+    Form* rrf2;
+    Form* fairy2;
+    Form* fairy;
+    Form* Pres;
+    Form* Pres2;
+
+    std::cout << "\n\n*--------------------------------DEBUT DE PROGRAMME -------------------------------*\n\n" << std::endl;
+    rrf = RandomIntern.makeForm("robotomy request", "Bender");
+    rrf2 = RandomIntern.makeForm("robotomy request2", "Bender2");
+    jonh.signForm(*rrf);
+    jonh.executeForm(*rrf);
+    std::cout << "\n*------------------------------------NEXT PART-------------------------------------*\n" << std::endl;
+
     
-    std::cout << jonh << std::endl;
-    std::cout << jim << std::endl;
-    std::cout << Lam << std::endl;
-    std::cout << "*-------------------------------------------------------------------*" << std::endl;
-    jonh.executeForm(Robot);
-    jim.executeForm(Robot);
-    Lam.executeForm(Robot);
-    std::cout << "*-------------------------------------------------------------------*" << std::endl;
-    jonh.signForm(Robot);
-    jim.signForm(Robot);
-    Lam.signForm(Robot);
-    std::cout << "*-------------------------------------------------------------------*" << std::endl;
-    jonh.executeForm(Robot);
-    jim.executeForm(Robot);
-    Lam.executeForm(Robot);
-
-    // std::cout << "*----------------------------NEXT PART ------------------------------*" << std::endl;
-    // std::cout << jonh << std::endl;
-    // std::cout << jim << std::endl;
-    // std::cout << Lam << std::endl;
-    // std::cout << "*-------------------------------------------------------------------*" << std::endl;
+    fairy = RandomIntern.makeForm("shruberry request", "Fairy");
+    fairy2 = RandomIntern.makeForm("shruberry", "Fariry22");
+    jim.signForm(*fairy);
+    // if (fairy2 == NULL)
+        // std::cout << "That NULL" << std::endl;
+    // jim.signForm(*fairy2);
+    // jim.executeForm(*fairy2);
+    jim.executeForm(*fairy);
     
-    // jonh.executeForm(Pres);
-    // jim.executeForm(Pres);
-    // Lam.executeForm(Pres);
-    // std::cout << "*-------------------------------------------------------------------*" << std::endl;
-    // jonh.signForm(Pres);
-    // jim.signForm(Pres);
-    // Lam.signForm(Pres);
-    // std::cout << "*\n-------------------------------------------------------------------*" << std::endl;
-    // jonh.executeForm(Pres);
-    // jim.executeForm(Pres);
-    // Lam.executeForm(Pres);
-    // std::cout << "*\n-------------------------------------------------------------------*" << std::endl;
+    std::cout << "\n*-------------------------------------NEXT PART------------------------------------*\n\n" << std::endl;
+    Pres = RandomIntern.makeForm("presidential request", "Wilson");
+    Pres2 = RandomIntern.makeForm("Prez", "Prez");
+    Lam.signForm(*Pres);
+    Lam.executeForm(*Pres);
 
-    // jonh.executeForm(home);
-    // jim.executeForm(home);
-    // Lam.executeForm(home);
-    // std::cout << "*-------------------------------------------------------------------*" << std::endl;
-    // jonh.signForm(home);
-    // jim.signForm(home);
-    // Lam.signForm(home);
-    // std::cout << "*-------------------------------------------------------------------*" << std::endl;
-    // jonh.executeForm(home);
-    // jim.executeForm(home);
-    // Lam.executeForm(home);
-    // std::cout << "*-------------------------------------------------------------------*" << std::endl;
-
-    // faire bureaucrat puis chacun faire une action
+    std::cout << "\n\n---------------------------------------FINISH---------------------------------------\n\n" << std::endl;
+   
 }
 
-
-// try sur execute
-// creer plusieurs bureaucrate
-// creer chaque classe pour tester
-
-/* ShruberryCreation : "home"
+/*
+        AVANT DE PUSH TROUVER MOYEN POUR VERIFIER SI FORM EST NULL ET DONC RETURN;
     
-    Pressiend : "wilson"
 
-    Robotomy : "pluto"
 
-    faire des test en mode 
-    execute 
-    "pas signee donc pas possible msg derreur"
-    puis faire signe bureaucrate
-    refaire un execute
 */

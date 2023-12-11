@@ -6,19 +6,18 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 19:05:59 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/10 20:00:07 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/11 15:07:31 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ROBOTOMYREQUESTFORM_HPP
 #define ROBOTOMYREQUESTFORM_HPP
-#include "AForm.hpp"
+#include "Form.hpp"
 
-class RobotomyRequestForm : public AForm
+class RobotomyRequestForm : public Form
 {
     private:
         std::string _name;
-        int         nb;
 
 
     public:

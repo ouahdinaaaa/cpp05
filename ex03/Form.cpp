@@ -6,7 +6,7 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 20:50:22 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/10 19:32:00 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/11 13:47:23 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,8 @@ const char * Form::GradeTooLowException::what() const throw()
 {
     return ("Grade is too low for a Form !!!");
 }
+
+
 
 void    Form::execute(const Bureaucrat& execu) const
 {

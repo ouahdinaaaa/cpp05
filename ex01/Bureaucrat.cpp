@@ -6,7 +6,7 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:54:31 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/09 17:29:56 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/11 19:02:20 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int    Bureaucrat::getGrade()const
 
 void    Bureaucrat::incrementGrade()
 {
-    if (this->_grade > 150)
+    if (this->_grade <= 1)
         throw Bureaucrat::GradeTooHightException();
     else
         this->_grade--;
@@ -53,7 +53,7 @@ void    Bureaucrat::incrementGrade()
 
 void    Bureaucrat::decrementGrade()
 {
-    if (this->_grade < 1)
+    if (this->_grade >= 150)
         throw Bureaucrat::GradeTooLowException();
     else
         this->_grade++;
@@ -63,9 +63,9 @@ void    Bureaucrat::decrementGrade()
 void    Bureaucrat::signForm(Form *a)
 {
     if (a->getSign() == true)
-        std::cout << this->_name << " a signe : " << a->getName() << std::endl;
+        std::cout << GREEN << this->_name << " a signe : " << a->getName() << RESET << std::endl;
     else 
-        std::cout << this->_name << " n'as pas pu signe " << a->getName() << " car note pas suffisante " << std::endl;
+        std::cout << RED << this->_name << " n'as pas pu signe " << a->getName() << " car note pas suffisante " << RESET << std::endl;
 }
 
 std::ostream& operator<<(std::ostream& o, const Bureaucrat& objs)
@@ -76,10 +76,10 @@ std::ostream& operator<<(std::ostream& o, const Bureaucrat& objs)
 
 const char * Bureaucrat::GradeTooHightException::what() const throw()
 {
-    return ("Grade is too high for a Bureaucrat !!!");
+    return ("\033[31m Grade is too high for a Bureaucrat !!! \033[1;97m ");
 }
 
 const char * Bureaucrat::GradeTooLowException::what() const throw()
 {
-    return ("Grade is too low for a Bureaucrat !!!");
+    return ("\033[31m Grade is too low for a Bureaucrat !!! \033[1;97m ");
 }

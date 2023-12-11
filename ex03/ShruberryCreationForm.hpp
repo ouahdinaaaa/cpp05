@@ -6,16 +6,16 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 19:19:36 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/10 20:00:11 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/11 15:07:52 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SHRUBERRYCREATIONFORM_HPP
 #define SHRUBERRYCREATIONFORM_HPP
 
-#include "AForm.hpp"
+#include "Form.hpp"
 
-class ShruberryCreationForm : public AForm
+class ShruberryCreationForm : public Form
 {
     private:
         std::string _name;

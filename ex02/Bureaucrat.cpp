@@ -6,7 +6,7 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:54:31 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/10 22:34:15 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/11 19:59:27 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,11 +71,11 @@ void    Bureaucrat::signForm(AForm &a)
     try
     {
         a.beSigned(*this);
-        std::cout << this->_name << " signed " << a << std::endl;
+        std::cout << GREEN << this->_name << " signed " << a.getName() << RESET << std::endl;
     }
     catch(const std::exception& e)
     {
-        std::cerr << this->_name << " cannot signed " << a << " because " <<  e.what() << std::endl;
+        std::cerr << RED << this->_name << " cannot signed " << a.getName() << " because " <<  e.what() << RESET << std::endl;
     }
 }
 
@@ -84,12 +84,12 @@ void    Bureaucrat::executeForm(AForm &a)
     try
     {
         a.Grade(*this); 
-        std::cout << this->_name << " executed " << a << std::endl;
+        std::cout << MAGENTA << this->_name << " executed " << a.getName() << RESET <<  std::endl;
  
    }
     catch(const std::exception& e)
     {
-        std::cerr << this->_name << " cannot execute " << a << " because " << e.what() << std::endl;
+        std::cerr << ORANGE << this->_name << " cannot execute " << a.getName() << " because " << e.what() << RESET << std::endl;
     }
     
     
@@ -103,10 +103,10 @@ std::ostream& operator<<(std::ostream& o, const Bureaucrat& objs)
 
 const char * Bureaucrat::GradeTooHightException::what() const throw()
 {
-    return ("Grade is too high for a Bureaucrat !!!");
+    return ("\033[31m Grade is too high for a Bureaucrat !!! \033[1;97m");
 }
 
 const char * Bureaucrat::GradeTooLowException::what() const throw()
 {
-    return ("Grade is too low for a Bureaucrat !!!");
+    return ("\033[31m Grade is too low for a Bureaucrat !!! \033[1;97m");
 }

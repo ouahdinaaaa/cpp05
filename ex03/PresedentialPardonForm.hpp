@@ -6,16 +6,16 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 18:58:09 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/10 20:00:02 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/11 15:07:12 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PRESEDENTIALPARDONFORM_HPP
 #define PRESEDENTIALPARDONFORM_HPP
 
-#include "AForm.hpp"
+#include "Form.hpp"
 
-class PresedentialPardonForm : public AForm
+class PresedentialPardonForm : public Form
 {
     private:
         std::string _name;

@@ -6,7 +6,7 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 19:09:29 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/10 22:47:56 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/11 19:38:25 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ RobotomyRequestForm::~RobotomyRequestForm()
 void    RobotomyRequestForm::Grade(const Bureaucrat &bureau) const
 {
     this->Form::execute(bureau);
-    std::cout << ".............vroooooum vrouuuum vrouuum..............." << std::endl;
+    std::cout << ".............vroooooum vrouuuum vrouuum..............." << RESET << std::endl;
     if (rand() < RAND_MAX / 2)
-        std::cout << "Bruiiiiit de forage \n" << this->_name << " A bien ete Robotise avec Succes !!! " << std::endl;
+        std::cout << ROSE << " Bruiiiiit de forage \n" << GREEN << this->_name << " A bien ete Robotise avec Succes !!! " << RESET << std::endl;
     else
-        std::cout << this->_name << "La Robotisation de cible a echouee !!!! " << std::endl;
+        std::cout << RED << this->_name << " La Robotisation de cible a echouee !!!! " << RESET << std::endl;
 }

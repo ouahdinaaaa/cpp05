@@ -6,7 +6,7 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 16:55:11 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/10 23:22:01 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/11 19:32:58 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,17 @@
 int main(void)
 {
     srand(time(NULL));
-    Bureaucrat jonh("jonh", 5);
-    Bureaucrat jim("jim", 3);
-    Bureaucrat Lam("Lam");
+    Bureaucrat jonh("👱 jonh", 5);
+    Bureaucrat jim("👱 jim", 3);
+    Bureaucrat Lam("👱 Lam");
 
-    RobotomyRequestForm Robot("Pluto");
-    PresedentialPardonForm  Pres("Prez");
-    ShruberryCreationForm   home("home");
+    RobotomyRequestForm Robot("🤖 Pluto");
+    PresedentialPardonForm  Pres(" Prez");
+    ShruberryCreationForm   home("🌳 home");
     
-    std::cout << jonh << std::endl;
-    std::cout << jim << std::endl;
-    std::cout << Lam << std::endl;
+    std::cout << GREEN << jonh << RESET << std::endl;
+    std::cout << MAGENTA << jim << RESET << std::endl;
+    std::cout << ROSE << Lam << RESET << std::endl;
     std::cout << "*-------------------------------------------------------------------*" << std::endl;
     jonh.executeForm(Robot);
     jim.executeForm(Robot);
@@ -46,9 +46,9 @@ int main(void)
     Lam.executeForm(Robot);
 
     std::cout << "\n\n*----------------------------NEXT PART ------------------------------*\n\n" << std::endl;
-    std::cout << jonh << std::endl;
-    std::cout << jim << std::endl;
-    std::cout << Lam << std::endl;
+    std::cout << GREEN << jonh << RESET << std::endl;
+    std::cout << MAGENTA << jim << RESET << std::endl;
+    std::cout << ROSE << Lam << RESET << std::endl;
     std::cout << "*-------------------------------------------------------------------*" << std::endl;
     
     jonh.executeForm(Pres);

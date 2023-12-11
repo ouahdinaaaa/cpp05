@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "Intern.hpp"
+#include "Bureaucrat.hpp"
 
 Intern::Intern()
 {
@@ -23,33 +24,44 @@ Intern::~Intern()
 }
 
 const char* Intern::InvalidForm::what() const throw()
-[
-    return ("Invalid Form for type !!!");
-]
+{
+    return (" Intern cannot creates beacause Form is not valid ");
+}
 
-Form *makeForm(const std::string &bureau, const std::string &name) const
+Form* Intern::makeForm(const std::string &bureau, const std::string &name)
 {
     Form* stag = NULL;
-    std::string name[3] = {
-        "shruberry", "robot", "presidential";
-    }
+    std::string _name[3] = {
+    "shruberry request", 
+    "robotomy request",
+    "presidential request"
+    };
+
     int i = 0;
-    while (i < 3 && name[i] != name)
+    while (i < 3 && _name[i] != bureau)
         i++;
-    switch (i)
+    try
     {
-    case 0
-        tmp = new ShruberryCreationForm(name);
-        break;
-    case 1
-        tmp = new RobotomyRequestForm(name);
-        break;
-    case 2
-        tmp = new PresedentialPardonForm(name);
-        break;
-    default:
-        break;//appel exception pour form invalide puis try \catch vers ou cets appelee
+        
+        switch (i)
+        {
+        case 0:
+            stag = new ShruberryCreationForm(name);
+            break;
+        case 1:
+            stag = new RobotomyRequestForm(name);
+            break;
+        case 2:
+            stag = new PresedentialPardonForm(name);
+            break;
+        default:
+            throw Intern::InvalidForm();
+        }
+        std::cout << GREEN << "Le stagiaire a crée : " << name << RESET << std::endl;
     }
-    std::cout << "Le stagiaire créer : " << name << std::endl;
+    catch(const std::exception& e)
+    {
+        std::cerr << RED << name << e.what() << RESET <<  '\n';
+    }
     return (stag);
 }

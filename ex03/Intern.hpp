@@ -12,6 +12,7 @@
 
 #ifndef INTERN_HPP
 #define INTERN_HPP
+
 #include <string>
 #include <iostream>
 #include "Form.hpp"
@@ -26,13 +27,13 @@ class Intern
     public:
     Intern();
     ~Intern();
-    Form*   makeForm(const std::string &bureau, const std::string &name) const;
+    Form*   makeForm(const std::string &bureau, const std::string &name);
 
     class InvalidForm : public std::exception
     {
         public : 
-        const char * what() const throw();
-    }
+        virtual const char * what() const throw();
+    };
 
 };
 
