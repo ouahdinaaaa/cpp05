@@ -6,7 +6,7 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 19:23:00 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/12 14:09:45 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/12 18:44:03 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,29 +35,30 @@ void    ShruberryCreationForm::Grade(const Bureaucrat &bureau) const
     std::ofstream    fd(this->_name.c_str());
     if (fd.is_open()){
         
-        fd << BLUE << "                  .o00o                 " << std::endl; 
-        fd << BLUE << "               o000000oo                " << std::endl; 
-        fd << BLUE << "              00000000000o              " << std::endl;     
-        fd << BLUE << "          🧚 00000000000000             " << std::endl; 
-        fd << BLUE << "          oooooo  00000000  o88o        " << std::endl; 
-        fd << BLUE << "       ooOOOOOOOoo  ```''  888888       " << std::endl; 
-        fd << ROSE << "     OOOOOOOOOOOO'.qQQQQq. `8888'       " << std::endl; 
-        fd << ROSE << "    oOOOOOOOOOO'.QQQQQQQQQQ/.88'🧚        " << std::endl; 
-        fd << ROSE << "    OOOOOOOOOO'🧚.QQQQQQQQQQ/ /q          " << std::endl; 
-        fd << ROSE << "     OOOOOOOOO QQQQQQQQQQ/ /QQ          " << std::endl; 
-        fd << ROSE << "       OOOOOOOOO `QQQQQQ/ /QQ'          " << std::endl; 
-        fd << ROSE << "         OO:F_P:O `QQQ/  /Q' /           " << std::endl; 
-        fd <<  MAGENTA << "          \'     |  // | /            " << std::endl; 
-        fd <<  MAGENTA << "            \'   |_////|/              " << std::endl; 
-        fd <<  MAGENTA << "              \' |\\ _' |              " << std::endl; 
-        fd <<  MAGENTA << "                | / \' |              " << std::endl; 
-        fd <<  MAGENTA << "                |  |O |                " << std::endl; 
-        fd <<  MAGENTA << "                |. \'_ |            " << std::endl; 
-        fd << GREEN << "                |_\\   |  _           " << std::endl; 
-        fd << GREEN << "             `-'  `-'`-'-'             " << std::endl; 
+        fd << BLUE << "                  .o00o                              .o00o                                             " << std::endl; 
+        fd << BLUE << "               o000000oo                          o000000oo             \033[34m        ..........            " << std::endl; 
+        fd << BLUE << "              00000000000o                       00000000000o            \033[34m      /          \\....    " << std::endl;     
+        fd << BLUE << "             00000000000000                     00000000000000           \033[34m .-----               \\     " << std::endl; 
+        fd << BLUE << "       🧚  oooooo  00000000  o88o          🧚  oooooo  00000000  o88888o    \033[34m/                      |       " << std::endl; 
+        fd << MAGENTA << "       ooOOOOOOOoo  ``🧚''  888888         ooOOOOOOOoo  ``🧚''  8888888  \033[34m \\....            ...../        " << std::endl; 
+        fd << MAGENTA <<    "     OOOOOOOOOOOO'.qQQQQq. `888888'     OOOOOOOOOOOO'.qQQQQq. `888888'     \033[34m  \\.........../             " << std::endl; 
+        fd << MAGENTA <<    "    oOOOOOOOOOO'.QQQQQQQQQQ/.8888'     oOOOOOOOOOO'.QQQQQQQQQQ/.8888'                                  " << std::endl; 
+        fd << MAGENTA <<    "    OOOOOOOOOO'.QQQQQQQQQQ/ /q         OOOOOOOOOO'.QQQQQQQQQQ/ /q                                      " << std::endl; 
+        fd << MAGENTA <<    "     \\OOOOOOOOO QQQQQQQQQQ/ /QQ/       \\OOOOOOOOO QQQQQQQQQQ/ /QQ/                                   " << std::endl; 
+        fd << MAGENTA <<    "       \\OOOOOOOOO `QQQQQQ/ /QQ/          \\OOOOOOOOO `QQQQQQ/ /QQ/                                    " << std::endl; 
+        fd << ROSE <<    "         \\OO:F_P:O `QQQ/  /Q'/🧚            \\OO:F_P:O `QQQ/  /Q'/🧚                                  " << std::endl; 
+        fd << ROSE <<    "          \\....|  // |...//                  \\....|  // |...//                                       " << std::endl; 
+        fd << ROSE <<    "               |\'  ' |                           |\'  ' |                                             " << std::endl; 
+        fd << ROSE <<    "               | \\ _ |                           | \\ _ |                                             " << std::endl; 
+        fd << ROSE <<    "               |'  / |                           |'  / |                                               " << std::endl; 
+        fd << ROSE <<    "               |  | O|                           |  | O|                                               " << std::endl; 
+        fd << BLUE <<    "              /\'. \'/'\\                          /\'. \'/'\\                                         " << std::endl; 
+        fd << GREEN <<   "      `---__/|_\\   //|\\ _ _              `---__/|_\\   //|\\ _ _                                     " << std::endl; 
+        fd << GREEN <<   "              `-'  `-'`-'-'                       `-'  `-'`-'-'                                        " << std::endl; 
         fd.close();
     }
     else
         std::cout << "Erreur dans ouverture de fichier" << std::endl;
 }
+
 
