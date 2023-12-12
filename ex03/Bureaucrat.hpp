@@ -6,7 +6,7 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:53:30 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/11 20:06:38 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/12 14:38:43 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ class GradeTooHightException : public std::exception
 {
     virtual const char* what() const throw();
 };
+
 
 };
 

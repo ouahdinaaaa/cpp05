@@ -6,7 +6,7 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:54:31 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/11 19:02:20 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/12 15:16:25 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,18 @@ Bureaucrat::~Bureaucrat()
 
 Bureaucrat::Bureaucrat(std::string const &name, int grade) : _name(name)
 {
-    if (grade < 1)
-        throw Bureaucrat::GradeTooLowException();
-    if (grade > 150)
-        throw Bureaucrat::GradeTooHightException();
-    else
-        this->_grade = grade;
+    try
+    {
+        if (grade < 1)
+            throw Bureaucrat::GradeTooLowException();
+        if (grade > 150)
+            throw Bureaucrat::GradeTooHightException();
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    this->_grade = grade;
 }
 
 std::string Bureaucrat::getName()const
@@ -63,7 +69,10 @@ void    Bureaucrat::decrementGrade()
 void    Bureaucrat::signForm(Form *a)
 {
     if (a->getSign() == true)
+    {
         std::cout << GREEN << this->_name << " a signe : " << a->getName() << RESET << std::endl;
+        a->PutSigned(true);
+    }
     else 
         std::cout << RED << this->_name << " n'as pas pu signe " << a->getName() << " car note pas suffisante " << RESET << std::endl;
 }

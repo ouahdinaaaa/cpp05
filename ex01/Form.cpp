@@ -6,7 +6,7 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 20:50:22 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/11 19:13:31 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/12 15:15:24 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,11 +63,16 @@ void    Form::beSigned(const Bureaucrat &bureau)
         this->status = true;
 }
 
+void    Form::PutSigned(bool res)
+{
+    this->status = res;
+}
+
 std::ostream &operator<<(std::ostream &o, const Form &objs)
 {
-    o << "📃" << objs.getName() 
+    o << " 📃 " << objs.getName() 
     << " || Grade exec : " << objs.getExec() 
     << " || Grade sign : " << objs.getSign() 
-    << " || status : " << objs.isSigned();
+    << " || status : " << std::boolalpha << objs.isSigned();
     return (o);
 }

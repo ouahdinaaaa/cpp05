@@ -6,7 +6,7 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 14:08:24 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/11 16:03:22 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/12 15:03:36 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int main()
 {
 	Bureaucrat john("👱 John", 3);
-	Bureaucrat Lola("👩 Lola", 149);
+	Bureaucrat Lola("👩 Lola", 140);
 	try
 	{
 		std::cout << YELLOW << john << std::endl;

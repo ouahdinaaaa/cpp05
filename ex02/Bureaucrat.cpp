@@ -6,7 +6,7 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:54:31 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/11 19:59:27 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/12 15:41:43 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,18 @@ Bureaucrat::~Bureaucrat()
 
 Bureaucrat::Bureaucrat(const std::string &name, int grade) : _name(name)
 {
-    if (grade < 1)
-        throw Bureaucrat::GradeTooLowException();
-    if (grade > 150)
-        throw Bureaucrat::GradeTooHightException();
-    else
-        this->_grade = grade;
+    try
+    {
+        if (grade < 1)
+            throw Bureaucrat::GradeTooLowException();
+        if (grade > 150)
+            throw Bureaucrat::GradeTooHightException();
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    this->_grade = grade;
 }
 
 std::string Bureaucrat::getName()const

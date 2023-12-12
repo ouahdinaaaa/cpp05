@@ -6,7 +6,7 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 19:23:00 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/11 20:23:51 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/12 14:09:45 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,15 +46,15 @@ void    ShruberryCreationForm::Grade(const Bureaucrat &bureau) const
         fd << ROSE << "    OOOOOOOOOO'🧚.QQQQQQQQQQ/ /q          " << std::endl; 
         fd << ROSE << "     OOOOOOOOO QQQQQQQQQQ/ /QQ          " << std::endl; 
         fd << ROSE << "       OOOOOOOOO `QQQQQQ/ /QQ'          " << std::endl; 
-        fd << ROSE << "         OO:F_P:O `QQQ/  /Q'            " << std::endl; 
-        fd <<  MAGENTA << "            \\. \' |  // |              " << std::endl; 
-        fd <<  MAGENTA << "            d\' \\\'|_////              " << std::endl; 
-        fd <<  MAGENTA << "            qP| \\ _' `|Ob              " << std::endl; 
-        fd <<  MAGENTA << "               \'  / \'  \'Op           " << std::endl; 
-        fd <<  MAGENTA << "               |  | O| |                " << std::endl; 
-        fd <<  MAGENTA << "       _       /\'. \'_/ /\'            " << std::endl; 
-        fd << GREEN << "        `---__/|_\\   //|  __           " << std::endl; 
-        fd << GREEN << "              `-'  `-'`-'-'             " << std::endl; 
+        fd << ROSE << "         OO:F_P:O `QQQ/  /Q' /           " << std::endl; 
+        fd <<  MAGENTA << "          \'     |  // | /            " << std::endl; 
+        fd <<  MAGENTA << "            \'   |_////|/              " << std::endl; 
+        fd <<  MAGENTA << "              \' |\\ _' |              " << std::endl; 
+        fd <<  MAGENTA << "                | / \' |              " << std::endl; 
+        fd <<  MAGENTA << "                |  |O |                " << std::endl; 
+        fd <<  MAGENTA << "                |. \'_ |            " << std::endl; 
+        fd << GREEN << "                |_\\   |  _           " << std::endl; 
+        fd << GREEN << "             `-'  `-'`-'-'             " << std::endl; 
         fd.close();
     }
     else

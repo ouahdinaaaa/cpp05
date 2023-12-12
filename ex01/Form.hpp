@@ -6,7 +6,7 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 20:23:57 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/09 18:42:16 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/12 15:16:09 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ class   Form
     bool isSigned()const;
     int getSign() const;
     int getExec() const;
+    void    PutSigned(bool res);
     void    beSigned(const Bureaucrat &bureau); // change status du form en true si note du bureaucrate est suffisante
 };
 
