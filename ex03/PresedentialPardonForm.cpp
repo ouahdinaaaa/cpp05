@@ -6,7 +6,7 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 18:59:56 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/11 20:10:45 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/13 15:26:32 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,18 @@ PresedentialPardonForm::PresedentialPardonForm() : Form("Jonh bendi", 25, 5), _n
 PresedentialPardonForm::PresedentialPardonForm(const std::string &name) : Form(name, 25, 5), _name(name) 
 {
 
+}
+
+PresedentialPardonForm::PresedentialPardonForm(const PresedentialPardonForm &objs) : Form(objs), _name(objs._name) 
+{
+    *this = objs;
+}
+
+
+PresedentialPardonForm  &PresedentialPardonForm::operator=(const PresedentialPardonForm &objs) : Form(objs), _name(objs._name)
+{
+    this->_name = objs._name;
+    return *this;
 }
 
 PresedentialPardonForm::~PresedentialPardonForm()

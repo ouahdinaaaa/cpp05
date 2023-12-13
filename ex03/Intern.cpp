@@ -23,6 +23,7 @@ Intern::~Intern()
 
 }
 
+
 const char* Intern::InvalidForm::what() const throw()
 {
     return (" Intern cannot creates beacause Form is not valid ");

@@ -6,7 +6,7 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 20:50:22 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/11 13:47:23 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/13 14:54:20 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,17 @@ Form::Form(const std::string &name, int execGrade, int signGrade) : _name(name),
 Form::Form(int exec, int sign) : _name("ouahdina"), _grade_exec(exec), _grade_sign(sign), status(false)
 {
     
+}
+
+Form::Form(const Form &objs) : _name(objs._name), _grade_exec(objs._grade_exec), _grade_sign(objs._grade_sign), status(objs.status)
+{
+    *this = objs;
+}
+
+Form    &Form::operator=(const Form &objs)
+{
+    this->status = objs.status;
+    return *this;
 }
 
 Form::~Form()

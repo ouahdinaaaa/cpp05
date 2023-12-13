@@ -6,7 +6,7 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 19:23:00 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/12 18:44:03 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/13 15:33:57 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,21 @@ ShruberryCreationForm::ShruberryCreationForm(const std::string &name) : Form(nam
     
 }
 
+ShruberryCreationForm::ShruberryCreationForm(const ShruberryCreationForm &objs) : Form(objs), _name(objs._name)
+{
+    *this = objs;
+}
+
 ShruberryCreationForm::~ShruberryCreationForm()
 {
 
 }
 
+ShruberryCreationForm   &ShruberryCreationForm::operator=(const ShruberryCreationForm &objs)
+{
+    this->_name = objs._name;
+    return *this;
+}
 
 void    ShruberryCreationForm::Grade(const Bureaucrat &bureau) const
 {

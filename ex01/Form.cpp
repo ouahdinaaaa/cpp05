@@ -6,7 +6,7 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 20:50:22 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/13 11:04:44 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/13 16:20:15 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ bool    Form::isSigned() const
 
 void    Form::beSigned(const Bureaucrat &bureau)
 {
-    if (bureau.getGrade() >= this->_grade_sign)
+    if (bureau.getGrade() >= this->getSign())
         this->status = true;
 }
 

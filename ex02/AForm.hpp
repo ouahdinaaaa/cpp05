@@ -5,35 +5,66 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/09 18:21:45 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/13 11:52:16 by ayael-ou         ###   ########.fr       */
+/*   Created: 2023/12/05 20:23:57 by ayael-ou          #+#    #+#             */
+/*   Updated: 2023/12/13 18:26:00 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef AFORM_HPP
 #define AFORM_HPP
-#include "Form.hpp"
 
-class AForm : public Form
+#include <iostream>
+#include <string>
+# include "Bureaucrat.hpp"
+
+class   AForm
 {
-    private :
-    std::string _name;
+    protected : 
+
+    const std::string _name;
+    const int   _grade_exec; // note requise pour exec
+    const int   _grade_sign;// note requise pour signer
+    bool    status; // savoir si signer ou non pas a construction
 
     public :
-    ~AForm();
-    AForm();
-    AForm(const AForm &objs);
-    AForm(const std::string &name);
-    AForm(const std::string &name, int sign, int exec);
 
+    AForm(const std::string &name, int execGrade, int signGrade);
+    AForm();
+    AForm(const std::string &name);
+    AForm(int exec, int sign);
+    AForm(const AForm &objs);
+
+    
+    virtual ~AForm() = 0;
+    virtual std::string getName() const;
+    bool isSigned()const;
+    int getSign() const;
+    int getExec() const;
     AForm &operator=(const AForm &objs);
+    void    beSigned(const Bureaucrat &bureau); // change status du AForm en true si note du bureaucrate est suffisante
+    void            execute(const Bureaucrat& execu)const;
+    virtual void Grade(const Bureaucrat &bureau) const = 0;
+
+class GradeTooLowException : public std::exception
+{
+    virtual const char *what() const throw();
+}; 
+
+class GradeTooHightException : public std::exception
+{
+    virtual const char* what() const throw();
 };
+
+class FormNotSignedException : public std::exception
+{
+    virtual const char* what() const throw();
+};
+
+};
+
+std::ostream &operator<<(std::ostream &o, const Form &objs);
 
 
 #endif
 
-
-
-//srand geneere aleatoirement si cest en dessou 0.5 succes or succes
-
-//sid num rand bien avant code appel srand initialise la sid
+Form::execute AForm::exec

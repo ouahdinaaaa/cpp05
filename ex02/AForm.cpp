@@ -5,26 +5,42 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/09 18:47:40 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/13 11:51:36 by ayael-ou         ###   ########.fr       */
+/*   Created: 2023/12/05 20:50:22 by ayael-ou          #+#    #+#             */
+/*   Updated: 2023/12/13 16:57:23 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
-#include "Form.hpp"
 
-
-AForm::AForm() : Form()
+AForm::AForm() : _name("ouahdina"), _grade_exec(1), _grade_sign(1), status(false)
 {
+    
 }
 
-#include "AForm.hpp"
-
-AForm::AForm(const std::string &name, int sign, int exec) : Form(name, sign, exec)
+AForm::AForm(const std::string &name) : _name(name), _grade_exec(1), _grade_sign(1), status(false)
 {
-        (void)name;
-        (void)sign;
-        (void)exec;
+    
+}
+
+AForm::AForm(const std::string &name, int execGrade, int signGrade) : _name(name), _grade_exec(execGrade), _grade_sign(signGrade), status(false)
+{
+             
+}
+
+AForm::AForm(int exec, int sign) : _name("ouahdina"), _grade_exec(exec), _grade_sign(sign), status(false)
+{
+    
+}
+
+AForm::AForm(const AForm &objs) : _name(objs._name), _grade_exec(objs._grade_exec), _grade_sign(objs._grade_sign), status(objs.status)
+{
+    *this = objs;
+}
+
+AForm &AForm::operator=(const AForm &objs)
+{
+    this->status = objs.status;
+    return (*this);
 }
 
 AForm::~AForm()
@@ -32,44 +48,65 @@ AForm::~AForm()
     
 }
 
-AForm::AForm(const AForm &objs) : Form(objs)
+std::string AForm::getName() const
 {
-        *this = objs;
+    return this->_name;
 }
 
-AForm &AForm::operator=(const AForm &objs)
+int AForm::getSign() const
 {
-        this->_name = objs._name;
-        return (*this);
+    return this->_grade_sign;
 }
 
-AForm::AForm(const std::string &name) : Form(name), _name(name) 
+int AForm::getExec() const
 {
-
+    return this->_grade_exec;
 }
 
-// AForm
+bool    AForm::isSigned() const 
+{
+    return this->status;
+}
 
+void    AForm::beSigned(const Bureaucrat &bureau)
+{
+    if (!this->status)
+    { 
+        if (bureau.getGrade() <= this->_grade_sign)
+            this->status = true;
+        else
+            throw AForm::GradeTooLowException();
+    }
+}
 
-            /* CLASS A CREER
+const char* AForm::FormNotSignedException::what() const throw()
+{
+    return ("Form is not signed");
+}
 
-*ShruberryCreationForm : Grade requis : signature 145 / exec : 137
-        - Creation fichier dans repertoire de travail puis dessiner AScii Art un arbres
-        
+const char * AForm::GradeTooHightException::what() const throw()
+{
+    return ("Grade is too high for a Form !!!");
+}
 
-*RobotomyRequestForm : Grade requis : sign : 72 / exec 45
-        - Print et affiche brruits de forage.
-        - Informe que cible a ete robotisee avec succes de 50% sinon echoue
-        
-        
-*PresedentialPardonForm : Grade requis : sign 25 / exec 5
-        - Affiche que cible a ete gracie par Zaphod Beeblebrox
+const char * AForm::GradeTooLowException::what() const throw()
+{
+    return ("Grade is too low for a Form !!!");
+}
 
+void    AForm::execute(const Bureaucrat& execu) const
+{
+    if (!this->isSigned())
+        throw AForm::FormNotSignedException();
+    if(execu.getGrade() > this->getExec())
+        throw AForm::GradeTooLowException();
+}
 
-Tout les classe prenne un seul parametre la cible du formuaire
-
-
-
-
-*/
-
+std::ostream &operator<<(std::ostream &o, const AForm &objs)
+{
+    o << "\n{name :" << objs.getName() 
+    << " || Grade exec : " << objs.getExec() 
+    << " || Grade sign : " << objs.getSign() 
+    << " || status : " << objs.isSigned() << "}\n";
+    return (o);
+}

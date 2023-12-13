@@ -27,6 +27,7 @@ class Intern
     public:
     Intern();
     ~Intern();
+
     Form*   makeForm(const std::string &bureau, const std::string &name);
 
     class InvalidForm : public std::exception

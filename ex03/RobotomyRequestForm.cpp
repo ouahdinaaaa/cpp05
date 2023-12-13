@@ -6,7 +6,7 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 19:09:29 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/11 20:26:58 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/13 15:29:28 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,17 @@ RobotomyRequestForm::RobotomyRequestForm() : Form("Robot", 72, 45)
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string &name) : Form(name, 72, 45), _name(name)
 {
+}
+
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &objs) : Form(objs), _name(objs._name)
+{
+    *this = objs;
+}
+
+RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &objs)
+{
+    this->_name = objs._name;
+    return *this;
 }
 
 RobotomyRequestForm::~RobotomyRequestForm()

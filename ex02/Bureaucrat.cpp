@@ -6,12 +6,11 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:54:31 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/13 11:29:39 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/13 17:01:47 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "Bureaucrat.hpp"
-#include "Form.hpp"
 #include "AForm.hpp"
 
 Bureaucrat::Bureaucrat() : _name("ouahdina"), _grade(150)

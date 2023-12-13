@@ -6,7 +6,7 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:54:31 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/13 00:02:36 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/13 16:11:36 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,17 +36,10 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &objs)
 
 Bureaucrat::Bureaucrat(std::string const &name, int grade) : _name(name)
 {
-    try
-    {    
-        if (grade < 1)
-            throw Bureaucrat::GradeTooLowException();
-        if (grade > 150)
-            throw Bureaucrat::GradeTooHightException();
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
+    if (grade <= 1)
+        throw Bureaucrat::GradeTooHightException();
+    if (grade >= 150)
+        throw Bureaucrat::GradeTooLowException();
     this->_grade = grade;    
 }
 
@@ -79,7 +72,7 @@ void    Bureaucrat::decrementGrade()
 
 std::ostream& operator<<(std::ostream& o, const Bureaucrat& objs)
 {
-	o << objs.getName() << ", bureaucrat grade " << objs.getGrade();
+	o << objs.getName() << ", bureaucrat grade : " << objs.getGrade();
 	return o;
 }
 
@@ -92,7 +85,3 @@ const char * Bureaucrat::GradeTooLowException::what() const throw()
 {
     return ("\033[31m Grade is too low for a Bureaucrat !!! \033[1;97m ");
 }
-
-/*
-        Reflechir a rajouter mes msg detroy et called
-*/

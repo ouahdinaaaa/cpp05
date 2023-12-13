@@ -6,7 +6,7 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 19:23:00 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/13 11:57:26 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/13 17:04:16 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ ShruberryCreationForm::~ShruberryCreationForm()
 
 void    ShruberryCreationForm::Grade(const Bureaucrat &bureau) const
 {
-    this->Form::execute(bureau);
+    this->execute(bureau);
     std::ofstream    fd(this->_name.c_str());
     if (fd.is_open()){
         
