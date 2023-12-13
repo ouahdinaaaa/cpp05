@@ -6,7 +6,7 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 19:23:00 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/12 18:42:07 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/13 11:57:26 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,17 @@ ShruberryCreationForm::ShruberryCreationForm() : AForm("home", 145, 137), _name(
 ShruberryCreationForm::ShruberryCreationForm(const std::string &name) : AForm(name, 145, 137), _name(name)
 {
     
+}
+
+ShruberryCreationForm::ShruberryCreationForm(const ShruberryCreationForm &objs) : AForm(objs), _name(objs._name)
+{
+    *this = objs;
+}
+
+ShruberryCreationForm &ShruberryCreationForm::operator=(const ShruberryCreationForm &objs)
+{
+    this->_name = objs._name;
+    return (*this);
 }
 
 ShruberryCreationForm::~ShruberryCreationForm()

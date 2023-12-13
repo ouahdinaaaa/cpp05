@@ -6,7 +6,7 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:53:30 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/11 15:42:35 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/12 23:58:17 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ class Bureaucrat
     public :
     
     Bureaucrat();
+    Bureaucrat(const Bureaucrat &objs);
     ~Bureaucrat();
     Bureaucrat(std::string const &name, int grade);
     
@@ -47,6 +48,7 @@ class Bureaucrat
     void        incrementGrade();
     void        decrementGrade();
     std::string getName()const;
+    Bureaucrat &operator=(const Bureaucrat &objs);
  
 class GradeTooLowException : public std::exception
 {

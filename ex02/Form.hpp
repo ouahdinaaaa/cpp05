@@ -6,7 +6,7 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 20:23:57 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/10 22:50:09 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/13 11:37:32 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,15 @@ class   Form
     Form();
     Form(const std::string &name);
     Form(int exec, int sign);
+    Form(const Form &objs);
+
+    
     virtual ~Form() = 0;
     virtual std::string getName() const;
     bool isSigned()const;
     int getSign() const;
     int getExec() const;
+    Form &operator=(const Form &objs);
     void    beSigned(const Bureaucrat &bureau); // change status du form en true si note du bureaucrate est suffisante
     void            execute(const Bureaucrat& execu)const;
     virtual void Grade(const Bureaucrat &bureau) const = 0;

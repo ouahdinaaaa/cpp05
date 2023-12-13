@@ -6,7 +6,7 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 18:21:45 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/10 22:50:17 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/13 11:52:16 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,11 @@ class AForm : public Form
     public :
     ~AForm();
     AForm();
+    AForm(const AForm &objs);
     AForm(const std::string &name);
     AForm(const std::string &name, int sign, int exec);
+
+    AForm &operator=(const AForm &objs);
 };
 
 

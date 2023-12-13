@@ -6,7 +6,7 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 19:09:29 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/11 19:38:25 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/13 11:53:23 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,17 @@ RobotomyRequestForm::RobotomyRequestForm(const std::string &name) : AForm(name, 
 RobotomyRequestForm::~RobotomyRequestForm()
 {
     
+}
+
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &objs) : AForm(objs), _name(objs._name)
+{
+    *this = objs;
+}
+
+RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &objs)
+{
+    this->_name = objs._name;
+    return *this;
 }
 
 void    RobotomyRequestForm::Grade(const Bureaucrat &bureau) const

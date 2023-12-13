@@ -6,7 +6,7 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:53:30 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/11 20:00:10 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/13 11:11:00 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,13 @@ class Bureaucrat
     Bureaucrat();
     ~Bureaucrat();
     Bureaucrat(const std::string &name);
+    Bureaucrat(const Bureaucrat &objs);
     Bureaucrat(const std::string &name, int grade);
     
     int         getGrade()const;
     void        incrementGrade();
     void        decrementGrade();
+    Bureaucrat  &operator=(const Bureaucrat &objs);
     std::string getName()const;
     void        signForm(AForm &a);// si form signee imprim msg sinon imprim msg
     void        executeForm(AForm &a);

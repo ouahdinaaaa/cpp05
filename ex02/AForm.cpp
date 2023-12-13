@@ -6,7 +6,7 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 18:47:40 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/10 19:58:48 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/13 11:51:36 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,17 @@ AForm::AForm(const std::string &name, int sign, int exec) : Form(name, sign, exe
 AForm::~AForm()
 {
     
+}
+
+AForm::AForm(const AForm &objs) : Form(objs)
+{
+        *this = objs;
+}
+
+AForm &AForm::operator=(const AForm &objs)
+{
+        this->_name = objs._name;
+        return (*this);
 }
 
 AForm::AForm(const std::string &name) : Form(name), _name(name) 

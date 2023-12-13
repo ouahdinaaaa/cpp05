@@ -6,7 +6,7 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:54:31 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/12 15:41:05 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/12 23:56:02 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,17 @@ Bureaucrat::Bureaucrat(const std::string &name) : _name(name), _grade(150)
 {
 
 } 
+
+Bureaucrat::Bureaucrat(const Bureaucrat &objs)
+{
+    *this = objs;
+}
+
+Bureaucrat  &Bureaucrat::operator=(const Bureaucrat &objs)
+{
+    this->_grade = objs._grade;
+    return (*this);
+}
 
 Bureaucrat::~Bureaucrat()
 {

@@ -42,7 +42,6 @@ Form* Intern::makeForm(const std::string &bureau, const std::string &name)
         i++;
     try
     {
-        
         switch (i)
         {
         case 0:
