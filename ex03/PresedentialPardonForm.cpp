@@ -6,7 +6,7 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 18:59:56 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/13 15:26:32 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/13 19:21:02 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ PresedentialPardonForm::PresedentialPardonForm(const PresedentialPardonForm &obj
 }
 
 
-PresedentialPardonForm  &PresedentialPardonForm::operator=(const PresedentialPardonForm &objs) : Form(objs), _name(objs._name)
+PresedentialPardonForm&  PresedentialPardonForm::operator=(const PresedentialPardonForm &objs)
 {
     this->_name = objs._name;
     return *this;

@@ -6,7 +6,7 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 20:50:22 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/13 16:57:23 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/13 18:48:26 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ AForm::AForm(const std::string &name) : _name(name), _grade_exec(1), _grade_sign
 
 AForm::AForm(const std::string &name, int execGrade, int signGrade) : _name(name), _grade_exec(execGrade), _grade_sign(signGrade), status(false)
 {
+    if (PRINT)
+        std::cout << "This is print" << std::endl;
              
 }
 
@@ -94,11 +96,11 @@ const char * AForm::GradeTooLowException::what() const throw()
     return ("Grade is too low for a Form !!!");
 }
 
-void    AForm::execute(const Bureaucrat& execu) const
+void    AForm::execute(const Bureaucrat& executor) const
 {
     if (!this->isSigned())
         throw AForm::FormNotSignedException();
-    if(execu.getGrade() > this->getExec())
+    if(executor.getGrade() > this->getExec())
         throw AForm::GradeTooLowException();
 }
 

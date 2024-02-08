@@ -6,7 +6,7 @@
 #    By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/05 20:23:23 by ayael-ou          #+#    #+#              #
-#    Updated: 2023/12/13 17:02:36 by ayael-ou         ###   ########.fr        #
+#    Updated: 2023/12/13 18:30:00 by ayael-ou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,10 +22,18 @@ SRCS = 	Bureaucrat.cpp\
 
 OBJS = ${SRCS:.cpp=.o}
 CC = c++
+CFLAGS += -Wall
+CFLAGS += -Werror
+CFLAGS += -Wextra
+CFLAGS += -g3
 RM = rm -rf
 
+ifeq ($(print), true)
+	CFLAGS += -D PRINT=true
+endif
+
 %.o: %.cpp
-	${CC} -c $< -o $@ -std=c++98 -Wall -Wextra -Werror -g3
+	${CC} -c $< -o $@ ${CFLAGS}
 
 ${NAME}: ${OBJS}
 	${CC} ${OBJS} -o ${NAME}

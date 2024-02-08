@@ -6,7 +6,7 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:54:31 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/13 17:01:47 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/13 18:54:01 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,8 +107,6 @@ void    Bureaucrat::executeForm(AForm &a)
     {
         std::cerr << ORANGE << this->_name << " cannot execute " << a.getName() << " because " << e.what() << RESET << std::endl;
     }
-    
-    
 }
 
 std::ostream& operator<<(std::ostream& o, const Bureaucrat& objs)

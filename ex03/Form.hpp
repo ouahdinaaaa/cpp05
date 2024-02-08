@@ -6,7 +6,7 @@
 /*   By: ayael-ou <ayael-ou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 20:23:57 by ayael-ou          #+#    #+#             */
-/*   Updated: 2023/12/13 14:53:58 by ayael-ou         ###   ########.fr       */
+/*   Updated: 2023/12/13 18:46:35 by ayael-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ class   Form
     protected : 
 
     const std::string _name;
-    const int   _grade_exec; // note requise pour exec
-    const int   _grade_sign;// note requise pour signer
-    bool    status; // savoir si signer ou non pas a construction
+    const int         _grade_exec; // note requise pour exec
+    const int         _grade_sign;// note requise pour signer
+    bool              status; // savoir si signer ou non pas a construction
 
     public :
 
